@@ -1,0 +1,68 @@
+/* Import Google font - Poppins */
+.container {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+
+  .form {
+    padding: 2rem;
+
+    header {
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      height: 60px;
+      width: 100%;
+      padding: 0 15px;
+      font-size: 17px;
+      margin-bottom: 1.3rem;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      outline: none;
+
+      &:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input.button {
+      color: #fff;
+      background: #4e73df;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-top: 1.7rem;
+      cursor: pointer;
+      transition: 0.4s;
+
+      &:hover {
+        background: #4e73df;
+      }
+
+      &:disabled {
+        background: #78909c;
+      }
+    }
+  }
+
+  .invalid-feedback {
+    margin-bottom: 5px;
+    color: #ef5350;
+    font-size: small;
+    font-style: italic;
+  }
+
+  .alert-container {
+    text-align: center;
+  }
+}
