@@ -6,14 +6,18 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 import { UserIndexComponent } from './components/user-index/user-index.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [UserIndexComponent],
+  declarations: [UserIndexComponent, UserEditComponent],
   imports: [
     CommonModule,
     UserRoutingModule,
     FontAwesomeModule,
     NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
 })
 export class UserModule {}

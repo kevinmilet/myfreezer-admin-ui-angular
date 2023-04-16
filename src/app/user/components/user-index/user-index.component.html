@@ -5,7 +5,6 @@
         <th>Id</th>
         <th>Nom</th>
         <th>Email</th>
-        <th>Inscription</th>
         <th>Admin</th>
         <th>Actif</th>
         <th>Edition</th>
@@ -20,7 +19,6 @@
         <td>{{ user.id }}</td>
         <td>{{ user.firstname }} {{ user.lastname }}</td>
         <td>{{ user.email }}</td>
-        <td>{{ user.created_at | date : "dd MMMM yyyy" }}</td>
         <td>
           <div [ngClass]="user.isAdmin ? 'green-circle' : 'red-circle'"></div>
         </td>
@@ -28,7 +26,9 @@
           <div [ngClass]="user.isActive ? 'green-circle' : 'red-circle'"></div>
         </td>
         <td>
-          <button><fa-icon [icon]="faUserPen"></fa-icon></button>
+          <button [routerLink]="['edit', user.id]">
+            <fa-icon [icon]="faUserPen"></fa-icon>
+          </button>
         </td>
       </tr>
     </tbody>

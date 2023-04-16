@@ -1,0 +1,119 @@
+<div class="form-container">
+  <form #f="ngForm" name="form">
+    <ul class="flex-outer">
+      <li>
+        <label for="user-id">ID</label>
+        <input
+          type="text"
+          id="user-id"
+          disabled
+          name="userid"
+          [(ngModel)]="user.id"
+          #userid="ngModel"
+        />
+      </li>
+      <li>
+        <label for="accountId">Compte ID</label>
+        <input
+          type="text"
+          id="accountId"
+          disabled
+          name="accountid"
+          [(ngModel)]="user.accountId"
+          #accountId="ngModel"
+        />
+      </li>
+      <li>
+        <label for="lastname">Nom</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          [(ngModel)]="user.lastname"
+          #lastname="ngModel"
+        />
+      </li>
+      <li>
+        <label for="firstname">Prénom</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          [(ngModel)]="user.firstname"
+          #firstname="ngModel"
+        />
+      </li>
+      <li>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          #email="ngModel"
+        />
+      </li>
+      <li>
+        <label for="createdAt">Inscription</label>
+        <input
+          type="date"
+          id="createdAt"
+          disabled
+          name="createdAt"
+          [(ngModel)]="user.created_at"
+          #createdAt="ngModel"
+        />
+      </li>
+      <li>
+        <label for="updatedAt">Mis à jour</label>
+        <input
+          *ngIf="user.updated_at !== null"
+          type="date"
+          id="updatedAt"
+          disabled
+          name="updatedAt"
+          [(ngModel)]="user.updated_at"
+          #updatedAt="ngModel"
+        />
+      </li>
+      <li>
+        <ul class="admin">
+          <li class="checkbox-container">
+            <p>Rôle Admin</p>
+            <span class="checkmark"></span>
+            <label class="toggler-wrapper style-1">
+              <input
+                type="checkbox"
+                id="is-admin-true"
+                name="is-admin"
+                value="true"
+                [checked]="user.isAdmin"
+              />
+              <div class="toggler-slider">
+                <div class="toggler-knob"></div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <p>Compte actif</p>
+            <label class="toggler-wrapper style-1">
+              <input
+                type="checkbox"
+                id="is-active-true"
+                name="is-active"
+                value="true"
+                [checked]="user.isActive"
+              />
+              <div class="toggler-slider">
+                <div class="toggler-knob"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <button type="submit">Sauvegarder</button>
+      </li>
+    </ul>
+  </form>
+</div>

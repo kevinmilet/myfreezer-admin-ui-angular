@@ -21,7 +21,7 @@ export class UserService {
    *
    * @type {string}
    */
-  url = 'http://localhost:8080/users';
+  url = 'http://localhost:8080/user';
 
   /**
    * Creates an instance of UserService.
@@ -40,5 +40,9 @@ export class UserService {
    */
   getAllUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.url);
+  }
+
+  getUserById(id: string | null): Observable<User> {
+    return this.http.get<User>(`${this.url}/${id}`);
   }
 }
