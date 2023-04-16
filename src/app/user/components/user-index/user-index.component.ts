@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { faUserPen } from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/models/user.model';
-import { PaginationInstance } from 'ngx-pagination';
 
 /**
  * User index component

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user.model';
 import * as dayJS from 'dayjs';
 import 'dayjs/locale/fr';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-edit',
@@ -15,6 +16,8 @@ export class UserEditComponent implements OnInit {
     private userService: UserService,
     private route: ActivatedRoute
   ) {}
+
+  faTrashCan = faTrashCan;
 
   user: User = {
     id: 0,
