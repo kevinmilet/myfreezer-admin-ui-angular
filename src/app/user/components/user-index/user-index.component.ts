@@ -66,6 +66,8 @@ export class UserIndexComponent implements OnInit {
     screenReaderCurrentLabel: `Page`,
   };
 
+  filterText: string = '';
+
   /**
    * Creates an instance of UserIndexComponent.
    * @date 4/14/2023 - 9:27:45 AM

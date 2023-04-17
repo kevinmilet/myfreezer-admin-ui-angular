@@ -1,9 +1,20 @@
+<div class="search-container">
+  <input
+    type="text"
+    name="search-field"
+    id="search-field"
+    placeholder="Chercher par Nom, Prénom ou Email..."
+    [(ngModel)]="filterText"
+  />
+</div>
+
 <div class="table-container">
   <table>
     <thead>
       <tr>
         <th>Id</th>
         <th>Nom</th>
+        <th>Prénom</th>
         <th>Email</th>
         <th>Admin</th>
         <th>Actif</th>
@@ -13,11 +24,14 @@
     <tbody>
       <tr
         *ngFor="
-          let user of users | paginate : { itemsPerPage: 10, currentPage: p }
+          let user of users
+            | filterUsers : filterText
+            | paginate : { itemsPerPage: 10, currentPage: p }
         "
       >
         <td>{{ user.id }}</td>
-        <td>{{ user.firstname }} {{ user.lastname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.firstname }}</td>
         <td>{{ user.email }}</td>
         <td>
           <div [ngClass]="user.isAdmin ? 'green-circle' : 'red-circle'"></div>
