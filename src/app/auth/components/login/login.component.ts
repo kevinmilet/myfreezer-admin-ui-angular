@@ -117,6 +117,9 @@ export class LoginComponent implements OnInit {
       password: this.f['password'].value,
     };
 
+    /** 
+     * Version Spring Boot
+     * 
     this.authService.login(this.credentials).subscribe(
       (res) => {
         let bearerToken = res?.headers?.get('authorization');
@@ -140,6 +143,16 @@ export class LoginComponent implements OnInit {
         // On envoi une alerte si la connexion a échouée
         this.alertService.sendAlert(err.status);
       }
+    );
+ */
+    this.authService.login(this.credentials).subscribe(
+      (data) => {
+        console.log(data.jwt_token);
+        this.authService.saveToken(data.jwt_token);
+        this.loading = false;
+        this.router.navigate(['/']);
+      },
+      (err) => console.log(err)
     );
   }
 }

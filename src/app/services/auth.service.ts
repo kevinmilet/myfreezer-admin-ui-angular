@@ -21,7 +21,7 @@ export class AuthService {
    *
    * @type {string}
    */
-  url = 'http://localhost:8080/authenticate';
+  url = 'http://localhost:8080/auth/login';
 
   /**
    * Creates an instance of AuthService.
@@ -39,14 +39,17 @@ export class AuthService {
    * @param {ICredential} credentials
    * @returns {Observable<any>}
    */
-  login(credentials: ICredential): Observable<any> {
-    const headers = { 'Content-Type': 'application/json' };
+  // login(credentials: ICredential): Observable<any> {
+  //   const headers = { 'Content-Type': 'application/json' };
 
-    return this.http.post<any>(this.url, credentials, {
-      headers: headers,
-      observe: 'response',
-      responseType: 'json',
-    });
+  //   return this.http.post<any>(this.url, credentials, {
+  //     headers: headers,
+  //     observe: 'response',
+  //     responseType: 'json',
+  //   });
+  // }
+  login(credentials: ICredential): Observable<any> {
+    return this.http.post<any>(this.url, credentials);
   }
 
   /**
